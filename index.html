@@ -10,28 +10,48 @@
 n = 0
 fuck_up = 0
 
+function del(event) {
+  if (event.keyCode === 8) {
+    store_del = true;
+    fuck_up -= 1;
+    console.log("FUCK UP DECREASED to " + fuck_up)
+    console.log("delete!");
+  } else {
+    store_del = false;
+  };
+}
+
+
+
 function keyFunction(event) {
   var keyPressed = String.fromCharCode(event.keyCode);
   console.log("You just pressed " + keyPressed);
+
   var string = "A man who has been through bitter experiences and travelled far enjoys even his sufferings after a time";
-    if (keyPressed === string[n]) {
+
+    if (keyPressed === string[n] && fuck_up === 0) {
       document.getElementById('key_pressed').innerHTML = keyPressed;
       n += 1;
       console.log("The value of n is " + n);
-    } else if ((string[n] === " ") && (event.keyCode === 32)) {
+    } else if ((string[n] === " " && fuck_up === 0) && (event.keyCode === 32)) {
       document.getElementById('key_pressed').innerHTML = keyPressed;
       n += 1;
       console.log("The value of n is " + n);
+    } else if (store_del === true) {
+      fuck_up -= 1;
+      console.log("FUCK UP DECREASES TO " + fuck_up);
     } else {
       console.log("sorry");
       fuck_up += 1;
-      console.log("The value of fuck_up is " + fuck_up);
+      console.log("FUCK UP INCREASES TO " + fuck_up);
       };
-    };
+
+};
 
 // function compare(string, event) {
 //   string === " " && eve
 // };
+
 
 </script>
 
@@ -50,6 +70,6 @@ A man who has been through bitter experiences and travelled far enjoys even his 
 <span id='key_pressed'></span>
 </div>
 <div>
-  <textarea id="text" rows="10em" cols="50em" onkeypress="keyFunction(event)"></textarea>
+  <textarea id="text" rows="10em" cols="50em" onkeypress="keyFunction(event)" onkeydown="del(event)"></textarea>
 </div>
 
