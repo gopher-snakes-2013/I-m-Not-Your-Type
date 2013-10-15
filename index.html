@@ -7,11 +7,31 @@
 //   document.getElementById("kp").innerHTML = keyPressed;
 // }
 
+n = 0
+fuck_up = 0
+
 function keyFunction(event) {
-  var keyPressed = String.fromCharCode(event.keyCode)
-  console.log("You just pressed " + keyPressed)
-  document.getElementById("kp").innerHTML = keyPressed;
-}
+  var keyPressed = String.fromCharCode(event.keyCode);
+  console.log("You just pressed " + keyPressed);
+  var string = "A man who has been through bitter experiences and travelled far enjoys even his sufferings after a time";
+    if (keyPressed === string[n]) {
+      document.getElementById('key_pressed').innerHTML = keyPressed;
+      n += 1;
+      console.log("The value of n is " + n);
+    } else if ((string[n] === " ") && (event.keyCode === 32)) {
+      document.getElementById('key_pressed').innerHTML = keyPressed;
+      n += 1;
+      console.log("The value of n is " + n);
+    } else {
+      console.log("sorry");
+      fuck_up += 1;
+      console.log("The value of fuck_up is " + fuck_up);
+      };
+    };
+
+// function compare(string, event) {
+//   string === " " && eve
+// };
 
 </script>
 
@@ -27,9 +47,9 @@ A man who has been through bitter experiences and travelled far enjoys even his 
 </p>
 
 <div>
-  <textarea rows="10em" cols="50em" onkeypress="keyFunction(event)"></textarea>
+<span id='key_pressed'></span>
+</div>
+<div>
+  <textarea id="text" rows="10em" cols="50em" onkeypress="keyFunction(event)"></textarea>
 </div>
 
-<div>
-<span id="kp"></span>
-</div>
