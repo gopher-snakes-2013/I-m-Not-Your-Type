@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<script>
+
+// document.onkeypress = function(event) {
+//   var keyPressed = String.fromCharCode(event.keyCode)
+//   console.log("You just pressed " + keyPressed)
+//   document.getElementById("kp").innerHTML = keyPressed;
+// }
+
+function keyFunction(event) {
+  var keyPressed = String.fromCharCode(event.keyCode)
+  console.log("You just pressed " + keyPressed)
+  document.getElementById("kp").innerHTML = keyPressed;
+}
+
+</script>
+
+TYPE!
+
+<!-- var string = "I like bacon"
+
+if string[0] === "I"
+  var string = " like bacon" -->
+
+<p>
+A man who has been through bitter experiences and travelled far enjoys even his sufferings after a time
+</p>
+
+<div>
+  <textarea rows="10em" cols="50em" onkeypress="keyFunction(event)"></textarea>
+</div>
+
+<div>
+<span id="kp"></span>
+</div>
