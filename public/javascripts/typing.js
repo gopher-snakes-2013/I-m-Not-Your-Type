@@ -1,3 +1,3 @@
 function keyPressed() {
-  return "something";
+  return "jasmine can suck it";
 };
