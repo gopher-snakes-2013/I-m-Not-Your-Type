@@ -1,5 +1,6 @@
 describe("keyPressed", function() {
-  it("should be defined", function() {
-    expect(keyPressed()).toBeDefined();
+  it("should return a letter when passed a keycode", function(){
+    var key = keyPressed(81);
+    expect(key).toEqual("Q");
   })
 });
