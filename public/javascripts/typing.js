@@ -1,3 +1,4 @@
+// CONTROLLER
 function gameLogic(event) {
   var testString = document.getElementById("test").innerText;
   concatenatingString(event, testString);
@@ -5,20 +6,21 @@ function gameLogic(event) {
     var timeInSeconds = (timer.endTime - timer.startTime) / 1000;
     var wpm = wordsPerMinute(timeInSeconds, testString);
     renderSecondsElapsed("time-elapsed", timeInSeconds);
-    renderWPM("wpm", wpm)
-  };
+    renderWPM("wpm", wpm);
+  }
 }
 
+// MODEL
 var correctChars = '';
 
 function keyPressed(keycode) {
   return String.fromCharCode(keycode);
-};
+}
 
 function concatenatingString(event, string) {
   var letter = keyPressed(event.keyCode);
   correctChars = correctChars.concat(letter);
-  setTimer(string)
+  setTimer(string);
   renderString("text", correctChars);
 }
 
@@ -29,14 +31,14 @@ var timer = {
     this.startTime += new Date().getTime();
   },
   end: function() {
-    this.endTime += new Date().getTime(); 
+    this.endTime += new Date().getTime();
   }
-}
+};
 
 function setTimer(comparisonString) {
-  if (correctChars.length === 1) { 
+  if (correctChars.length === 1) {
     timer.start();
-  };
+  }
   if (correctChars.length === comparisonString.length) {
     timer.end();
   }
@@ -51,9 +53,9 @@ function wordsPerMinute(time, string) {
   var numberWordsInPrompt = numberOfWords(string);
   var timeInMinutes = time/60;
   var wpm = Math.floor(numberWordsInPrompt/timeInMinutes);
-  return wpm
+  return wpm;
 }
-
+// VIEW
 function renderString(id, string) {
   document.getElementById(id).innerText = string;
 }
