@@ -35,9 +35,3 @@ describe("wordsPerMinute()", function() {
     expect(wordsPerMinute(60, string)).toEqual(6);
   });
 });
-
-describe("setTimer()", function() {
-  xit("should be defined and shit", function(){
-    expect(setTimer()).toBeDefined();
-  });
-});
