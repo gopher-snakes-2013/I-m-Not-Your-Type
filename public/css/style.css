@@ -1,0 +1,44 @@
+body {
+  margin:0;
+}
+
+#container {
+  width:100%;
+  text-align: center;
+  font-family: helvetica-light;
+}
+
+#header {
+  font-family: courier;
+  font-size: 30px;
+}
+
+#text-to-type {
+  font-size: 20px;
+}
+
+#gurl-image {
+  position:relative;
+  padding-top:50px;
+  padding-left:200px;
+  text-align: left;
+}
+
+#text-box {
+  font-size: 20px
+}
+
+#text {
+  position:relative;
+  padding-top: 50px;
+}
+
+.text-box {
+  text-align: center;
+  font-size: 16px;
+  padding:5px;
+  width:500px;
+}
+
+#timer {
+}
