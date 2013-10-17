@@ -9,14 +9,8 @@ feature "Guest visits home page" do
 
   scenario "Guest can type into a text area" do
     visit "/"
-    fill_in('Type Box', :with => 'With great power failsauce')
+    fill_in('Type_Box', :with => 'With great power failsauce')
     expect(page).to have_content('With great power failsauce')
-  end
-
-  scenario "Guest can see text being built below text area" do
-    visit "/"
-    fill_in('Type Box', :with => 'With great power failsauce')
-    page.should have_css('span#text', :text == 'With great power failsauce')
   end
 
 end
