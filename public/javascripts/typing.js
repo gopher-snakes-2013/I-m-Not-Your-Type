@@ -13,33 +13,42 @@ var timer = {
   }
 }
 
-function numberOfWords() {
-  var length = document.getElementById("test").innerText.split(' ').length;
+function setTimer() {
+
+}
+
+function numberOfWords(string) {
+  var length = string.split(' ').length;
   return length;
 }
 
-function wordsPerMinute(time) {
-  var numberWordsInPrompt = numberOfWords();
+function wordsPerMinute(time, string) {
+  var numberWordsInPrompt = numberOfWords(string);
   var timeInMinutes = time/60;
   var wpm = Math.floor(numberWordsInPrompt/timeInMinutes);
   return wpm
 }
 
 var correctChars = '';
-var testString = "With great power comes great responsibility.";
 
 function concatenatingString(event) {
+  var testString = document.getElementById("test").innerText;
   var letter = keyPressed(event.keyCode);
   correctChars = correctChars.concat(letter);
   document.getElementById("text").innerText = correctChars;
-  if (correctChars.length === 1) {
+
+  if (correctChars.length === 1) { 
     timer.start();
   };
   if (correctChars.length === testString.length) {
     timer.end();
     var timeInSeconds = (timer.endTime - timer.startTime) / 1000;
     document.getElementById("time-elapsed").innerText = "Seconds Elapsed: " + timeInSeconds;
-    var wpm = wordsPerMinute(timeInSeconds);
+    var wpm = wordsPerMinute(timeInSeconds, testString);
     document.getElementById("wpm").innerText = "WPM: " + wpm
   }
 }
+
+// function render {
+  
+// }
