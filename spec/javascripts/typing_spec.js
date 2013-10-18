@@ -1,12 +1,3 @@
-describe("view", function() {
-  describe(".keyPressed", function() {
-    it("should return a letter when passed a keycode", function(){
-      var key = view.keyPressed(81);
-      expect(key).toEqual("Q");
-    });
-  });
-});
-
 describe("model", function() {
   describe("model.charIsCorrect", function() {
     xit("should return true if letter matches marking letter in text", function() {
@@ -46,7 +37,7 @@ describe("timer", function() {
 
 describe("numberOfWords()", function() {
   var string = "With great power comes great responsibility.";
-  it("should have calculate the correct number of words in test string", function() {
+  it("should calculate the correct number of words in test string", function() {
     expect(numberOfWords(string)).toEqual(6);
   });
 });
@@ -55,5 +46,13 @@ describe("wordsPerMinute()", function() {
   var string = "With great power comes great responsibility.";
   it("should return a wpm count", function(){
     expect(wordsPerMinute(60, string)).toEqual(6);
+  });
+});
+
+describe("accuracyRating()", function() {
+  var user_typed = 68;
+  var actual_text = "With great power comes great responsibility.";
+  it("should return an accuracy rating", function() {
+    expect(accuracyRating(user_typed, actual_text)).toEqual(Math.floor((44/68) * 100));
   });
 });
