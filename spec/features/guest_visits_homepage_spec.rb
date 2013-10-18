@@ -20,11 +20,9 @@ feature "Guest visits home page" do
     page.should have_css('span#text', :text == 'With great power failsauce')
   end
 
-  scenario "Guest can see seconds elapsed and words per minute" do
-    # document.onkeypress();
+  xscenario "Guest can see seconds elapsed and words per minute" do
     fill_in('Type Box', :with => "With great power comes great responsibility.")
     expect(page).to have_content("Second Elapsed:")
     expect(page).to have_content("WPM:")
   end
-
 end
