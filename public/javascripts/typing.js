@@ -35,9 +35,6 @@ function startTyping() {
     return false;
   }
 
-  function keyPressed(keycode) {
-    return String.fromCharCode(keycode);
-  }
 
   function concatenatingString(letter, string) {
     if (checkCorrect(letter, string)) {
@@ -56,21 +53,6 @@ function startTyping() {
     }
   }
 
-  function numberOfWords(string) {
-    var length = string.split(' ').length;
-    return length;
-  }
-
-  function wordsPerMinute(time, string) {
-    var numberWordsInPrompt = numberOfWords(string);
-    var timeInMinutes = time/60;
-    var wpm = Math.floor(numberWordsInPrompt/timeInMinutes);
-    return wpm;
-  }
-
-  function accuracyRating(user_typed, actual_text) {
-    return Math.floor((actual_text.length)/user_typed * 100);
-  }
 
   //VIEW
 
@@ -97,7 +79,22 @@ function startTyping() {
   bindEventListeners();
 }
 
+function keyPressed(keycode) {
+  return String.fromCharCode(keycode);
+}
 
-window.onload = function() {
-  startTyping();
+function numberOfWords(string) {
+  var length = string.split(' ').length;
+  return length;
+}
+
+function wordsPerMinute(time, string) {
+  var numberWordsInPrompt = numberOfWords(string);
+  var timeInMinutes = time/60;
+  var wpm = Math.floor(numberWordsInPrompt/timeInMinutes);
+  return wpm;
+}
+
+function accuracyRating(user_typed, actual_text) {
+  return Math.floor((actual_text.length)/user_typed * 100);
 }

@@ -18,7 +18,7 @@ describe("keyPressed()", function() {
   });
 });
 
-describe("timer", function() {
+describe("Timer", function() {
   var timer;
   beforeEach(function() {
     timer = new Timer();
