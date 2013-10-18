@@ -1,20 +1,32 @@
 var correctChars = '';
 var latestChar = 0;
 var nthChildCounter = 0;
+var totalCharsPressed = 0;
 
 function gameLogic(event) {
   var testString = document.getElementById("test").innerText;
   concatenatingString(event, testString);
-  if (correctChars.length === testString.length) {
+  if (isDone(testString)) {
     var timeInSeconds = (timer.endTime - timer.startTime) / 1000;
     var wpm = wordsPerMinute(timeInSeconds, testString);
+    var accuracy = accuracyRating(totalCharsPressed,testString);
+    renderAccuracy("accuracy", accuracy);
     renderSecondsElapsed("time-elapsed", timeInSeconds);
     renderWPM("wpm", wpm);
   }
 }
 
+function isDone(testString) {
+  if (correctChars.length === testString.length) {
+    correctChars = '';
+    return true;
+  }
+  return false;
+}
+
 function checkCorrect(char) {
   var testString = document.getElementById("test").innerText;
+  ++totalCharsPressed;
   if(char === testString[latestChar]) {
     ++latestChar;
     runBitchRun(testString);
@@ -82,6 +94,12 @@ function wordsPerMinute(time, string) {
   return wpm;
 }
 
+function accuracyRating(user_typed, actual_text) {
+  return Math.floor((actual_text.length)/user_typed * 100);
+}
+
+//VIEW
+
 function renderString(id, string) {
   document.getElementById(id).innerText = string;
 }
@@ -92,4 +110,8 @@ function renderSecondsElapsed(id, seconds) {
 
 function renderWPM(id, wpm) {
   document.getElementById(id).innerText = "WPM: " + wpm;
+}
+
+function renderAccuracy(id, accuracy) {
+  document.getElementById(id).innerText = "Accuracy: " + accuracy + "%";
 }
