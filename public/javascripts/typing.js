@@ -1,6 +1,6 @@
-
 var correctChars = '';
 var latestChar = 0;
+var nthChildCounter = 0;
 
 function gameLogic(event) {
   var testString = document.getElementById("test").innerText;
@@ -17,9 +17,23 @@ function checkCorrect(char) {
   var testString = document.getElementById("test").innerText;
   if(char === testString[latestChar]) {
     ++latestChar;
+    runBitchRun(testString);
     return true;
   }
   return false;
+}
+
+function runBitchRun(testStrang) {
+  var incrementor = testStrang.length/10;
+  if (latestChar % Math.floor(incrementor) === 0) {
+    ++nthChildCounter;
+    updateGurlPosition();
+  }
+}
+
+function updateGurlPosition() {
+  $("#gurl-image td:nth-child(" + nthChildCounter + ")").html('<img src="http://www.run4shalva.org/blog/wp-content/uploads/2012/12/happy-cartoon-girl.jpg" width="192" height="256">');
+  $("#gurl-image td:nth-child(" + (nthChildCounter - 1) + ")").empty();
 }
 
 function keyPressed(keycode) {
@@ -67,7 +81,7 @@ function wordsPerMinute(time, string) {
   var wpm = Math.floor(numberWordsInPrompt/timeInMinutes);
   return wpm;
 }
-// VIEW
+
 function renderString(id, string) {
   document.getElementById(id).innerText = string;
 }
