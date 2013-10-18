@@ -44,7 +44,7 @@ function runBitchRun(testStrang) {
 }
 
 function updateGurlPosition() {
-  $("#gurl-image td:nth-child(" + nthChildCounter + ")").html('<img src="http://www.run4shalva.org/blog/wp-content/uploads/2012/12/happy-cartoon-girl.jpg" width="192" height="256">');
+  $("#gurl-image td:nth-child(" + nthChildCounter + ")").html('<img src="http://www.run4shalva.org/blog/wp-content/uploads/2012/12/happy-cartoon-girl.jpg" width="190%">');
   $("#gurl-image td:nth-child(" + (nthChildCounter - 1) + ")").empty();
 }
 
