@@ -18,20 +18,37 @@ describe("keyPressed()", function() {
   });
 });
 
-describe("timer", function() {
-  it("should have a start time and an end time", function() {
-    expect(timer.startTime).toBeDefined();
-    expect(timer.endTime).toBeDefined();
+describe("Timer", function() {
+  var timer;
+  beforeEach(function() {
+    timer = new Timer();
   });
 
-  it("should have a start function which sets the start time", function() {
-    timer.start();
-    expect(timer.startTime).toNotEqual(0);
+  describe('#start', function() {
+    it('sets the startTime to whatever time it is now', function() {
+      var currentTime = new Date().getTime();
+      timer.start();
+      expect(timer.startTime).toEqual(currentTime);
+    });
   });
 
-  it("should have an end function which sets the end time", function() {
-    timer.end();
-    expect(timer.endTime).toNotEqual(0);
+  describe('#end', function() {
+    it("sets the endTiem to whatever time it is now", function() {
+      var currentTime = new Date().getTime();
+      timer.end();
+      expect(timer.endTime).toEqual(currentTime);
+    });
+  });
+
+  describe('#duration', function() {
+    it("is 0 if it hadn't been started", function() {
+      expect(timer.duration()).toEqual(0);
+    });
+    it('is equal to the endTime minus the startTime', function() {
+      timer.startTime = 3;
+      timer.endTime = 5;
+      expect(timer.duration()).toEqual(2);
+    })
   });
 });
 

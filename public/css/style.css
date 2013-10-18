@@ -50,12 +50,9 @@ td {
   padding-top: 50px;
 }
 
-.text-box {
+#typing-zone {
   text-align: center;
   font-size: 16px;
   padding:5px;
   width:500px;
-}
-
-#timer {
 }
