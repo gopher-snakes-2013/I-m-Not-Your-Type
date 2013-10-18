@@ -1,3 +1,25 @@
+describe("view", function() {
+  describe(".keyPressed", function() {
+    it("should return a letter when passed a keycode", function(){
+      var key = view.keyPressed(81);
+      expect(key).toEqual("Q");
+    });
+  });
+});
+
+describe("model", function() {
+  describe("model.charIsCorrect", function() {
+    xit("should return true if letter matches marking letter in text", function() {
+      expect(model.charIsCorrect('W')).toBe(true);
+    });
+
+    xit("should return false if letter does not match marking letter in text", function() {
+      expect(model.charIsCorrect('p')).toBe(false);
+    });
+
+  });
+});
+
 describe("keyPressed()", function() {
   it("should return a letter when passed a keycode", function(){
     var key = keyPressed(81);
@@ -23,14 +45,14 @@ describe("timer", function() {
 });
 
 describe("numberOfWords()", function() {
-  var string = "With great power comes great responsibility."
+  var string = "With great power comes great responsibility.";
   it("should have calculate the correct number of words in test string", function() {
     expect(numberOfWords(string)).toEqual(6);
   });
 });
 
 describe("wordsPerMinute()", function() {
-  var string = "With great power comes great responsibility."
+  var string = "With great power comes great responsibility.";
   it("should return a wpm count", function(){
     expect(wordsPerMinute(60, string)).toEqual(6);
   });

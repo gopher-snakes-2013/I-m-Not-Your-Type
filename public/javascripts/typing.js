@@ -1,4 +1,7 @@
-// CONTROLLER
+
+var correctChars = '';
+var latestChar = 0;
+
 function gameLogic(event) {
   var testString = document.getElementById("test").innerText;
   concatenatingString(event, testString);
@@ -10,8 +13,14 @@ function gameLogic(event) {
   }
 }
 
-// MODEL
-var correctChars = '';
+function checkCorrect(char) {
+  var testString = document.getElementById("test").innerText;
+  if(char === testString[latestChar]) {
+    ++latestChar;
+    return true;
+  }
+  return false;
+}
 
 function keyPressed(keycode) {
   return String.fromCharCode(keycode);
@@ -19,9 +28,12 @@ function keyPressed(keycode) {
 
 function concatenatingString(event, string) {
   var letter = keyPressed(event.keyCode);
-  correctChars = correctChars.concat(letter);
-  setTimer(string);
-  renderString("text", correctChars);
+
+  if (checkCorrect(letter)) {
+    correctChars = correctChars.concat(letter);
+    setTimer(string);
+    renderString("text", correctChars);
+  }
 }
 
 var timer = {
