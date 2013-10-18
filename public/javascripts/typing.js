@@ -29,13 +29,13 @@ function checkCorrect(char) {
   ++totalCharsPressed;
   if(char === testString[latestChar]) {
     ++latestChar;
-    runBitchRun(testString);
+    girlRuns(testString);
     return true;
   }
   return false;
 }
 
-function runBitchRun(testStrang) {
+function girlRuns(testStrang) {
   var incrementor = testStrang.length/10;
   if (latestChar % Math.floor(incrementor) === 0) {
     ++nthChildCounter;
