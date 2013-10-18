@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="javascripts/typing.js"></script>
 </head>
 
 <body>
-<h1>I'm Not Your Type!</h1>
+<div id="container">
+  <div id="header">
+    <h1>I'm Not Your Type!</h1>
+  </div>
+  <div id="text-to-type">
+    <p id="test">With great power comes great responsibility.</p>
+  </div>
 
-<p id="test">With great power comes great responsibility.</p>
-
-<textarea rows="4" cols="60" name="Type Box" onkeypress="gameLogic(event)"></textarea>
-
-<br/>
-<span id="text"></span>
-<br/>
-<span id="time-elapsed"></span>
-<br/>
-<span id="wpm"></span>
-<br>
-<span id="accuracy"></span>
+  <div id="text-box">
+    <input class="text-box" type="text" name="Type Box" onkeypress="gameLogic(event)" placeholder="TYPE!">
+  </div>
+  <div id="boy">
+    <img src="http://www.booksie.com/media/165220/here_I_am_boy_cartoon.png" width="38%">
+  </div>
+  <div id="gurl-image">
+    <table class="gurl">
+      <tr>
+        <td><img src="http://www.run4shalva.org/blog/wp-content/uploads/2012/12/happy-cartoon-girl.jpg" width="190%"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div id="text"></div>
+  <div id="timer">
+    <br/>
+    <span id="wpm"></span>
+    <br/>
+    <span id="time-elapsed"></span>
+    <br/>
+    <span id="accuracy"></span>
+  </div>
+</div>
 </body>
 </html>

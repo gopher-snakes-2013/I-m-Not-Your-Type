@@ -1,0 +1,61 @@
+body {
+  margin:0;
+}
+
+#container {
+  width:100%;
+  text-align: center;
+  font-family: helvetica-light;
+}
+
+#header {
+  font-family: courier;
+  font-size: 30px;
+}
+
+#text-to-type {
+  font-size: 20px;
+}
+
+#boy {
+  position:absolute;
+  padding-top: 60px;
+  padding-left:-50px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  z-index: 1;
+}
+
+#gurl-image {
+  position:relative;
+  padding-top:47px;
+  padding-left:240px;
+  text-align: left;
+}
+
+td {
+  width:70px;
+}
+
+#text-box {
+  font-size: 20px
+}
+
+#text {
+  position:relative;
+  padding-top: 50px;
+}
+
+.text-box {
+  text-align: center;
+  font-size: 16px;
+  padding:5px;
+  width:500px;
+}
+
+#timer {
+}

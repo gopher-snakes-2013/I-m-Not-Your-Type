@@ -1,5 +1,6 @@
 var correctChars = '';
 var latestChar = 0;
+var nthChildCounter = 0;
 var totalCharsPressed = 0;
 
 function gameLogic(event) {
@@ -28,9 +29,23 @@ function checkCorrect(char) {
   ++totalCharsPressed;
   if(char === testString[latestChar]) {
     ++latestChar;
+    girlRuns(testString);
     return true;
   }
   return false;
+}
+
+function girlRuns(testStrang) {
+  var incrementor = testStrang.length/10;
+  if (latestChar % Math.floor(incrementor) === 0) {
+    ++nthChildCounter;
+    updateGurlPosition();
+  }
+}
+
+function updateGurlPosition() {
+  $("#gurl-image td:nth-child(" + nthChildCounter + ")").html('<img src="http://www.run4shalva.org/blog/wp-content/uploads/2012/12/happy-cartoon-girl.jpg" width="190%">');
+  $("#gurl-image td:nth-child(" + (nthChildCounter - 1) + ")").empty();
 }
 
 function keyPressed(keycode) {
@@ -39,6 +54,7 @@ function keyPressed(keycode) {
 
 function concatenatingString(event, string) {
   var letter = keyPressed(event.keyCode);
+
   if (checkCorrect(letter)) {
     correctChars = correctChars.concat(letter);
     setTimer(string);
