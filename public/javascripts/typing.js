@@ -40,7 +40,7 @@ function startTyping() {
   }
 
   function girlRuns(testStrang) {
-    var incrementor = testStrang.length/10;
+    var incrementor = testStrang.length/30;
     if (latestChar % Math.floor(incrementor) === 0) {
       ++nthChildCounter;
       updateGurlPosition();
@@ -48,7 +48,7 @@ function startTyping() {
   }
 
   function updateGurlPosition() {
-    $("#gurl-image td:nth-child(" + nthChildCounter + ")").html('<img src="http://www.run4shalva.org/blog/wp-content/uploads/2012/12/happy-cartoon-girl.jpg" width="190%">');
+    $("#gurl-image td:nth-child(" + nthChildCounter + ")").html('<img src="gurl.png" width="134px" height="179px">');
     $("#gurl-image td:nth-child(" + (nthChildCounter - 1) + ")").empty();
   }
 
