@@ -21,6 +21,20 @@ body {
   margin: 0 auto;
 }
 
+#test {
+  display:none;
+}
+
+.letters {
+  white-space:pre;
+  margin:-2.5px;
+}
+
+#active {
+  color:white;
+  background: rgba(0, 0, 0, .6);
+}
+
 #kids {
   position:relative;
   width:100%;
@@ -56,6 +70,7 @@ td {
 }
 
 #text {
+  display:none;
   position:relative;
   padding-top: 50px;
   width:600px;
@@ -67,4 +82,11 @@ td {
   font-size: 16px;
   padding:5px;
   width:500px;
+}
+
+#stats {
+  position:relative;
+  padding-top: 40px;
+  width:600px;
+  margin: 0 auto;
 }
