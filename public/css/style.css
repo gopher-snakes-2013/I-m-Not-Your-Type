@@ -1,5 +1,6 @@
 body {
   margin:0;
+  background-image:url('http://www.dvd-ppt-slideshow.com/images/ppt-background/background-11.jpg');
 }
 
 #container {
@@ -14,7 +15,15 @@ body {
 }
 
 #text-to-type {
+  position:relative;
   font-size: 20px;
+  width:600px;
+  margin: 0 auto;
+}
+
+#kids {
+  position:relative;
+  width:100%;
 }
 
 #boy {
@@ -42,20 +51,20 @@ td {
 }
 
 #text-box {
-  font-size: 20px
+  position:relative;
+  font-size: 20px;
 }
 
 #text {
   position:relative;
   padding-top: 50px;
+  width:600px;
+  margin: 0 auto;
 }
 
-.text-box {
+#typing-zone {
   text-align: center;
   font-size: 16px;
   padding:5px;
   width:500px;
-}
-
-#timer {
 }
