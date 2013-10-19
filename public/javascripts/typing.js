@@ -33,10 +33,16 @@ function startTyping() {
     ++totalCharsPressed;
     if(char === testString[latestChar]) {
       ++latestChar;
+      highlight();
       girlRuns(testString);
       return true;
     }
     return false;
+  }
+
+  function highlight() {
+    $("#text-to-type span:nth-child(" + (latestChar + 2) + ")").attr("id", "active");
+    $("#text-to-type span:nth-child(" + (latestChar + 1) + ")").removeAttr("id");
   }
 
   function girlRuns(testStrang) {
